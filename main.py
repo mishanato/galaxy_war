@@ -28,7 +28,7 @@ class Game:
     def __check_events(self):
 
         for event in pygame.event.get():
-
+            
             if event.type == pygame.QUIT:
                 self.__game_end = True
 
