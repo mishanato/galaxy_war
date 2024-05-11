@@ -32,6 +32,10 @@ class Player:
             self.__rect.y = 0
         elif self.__rect.y > screen_height - self.__rect.height:
             self.__rect.y = screen_height - self.__rect.height
+        if self.__rect.x < 0:
+            self.__rect.x = 0
+        elif self.__rect.x > screen_width - self.__rect.width:
+            self.__rect.x = screen_width - self.__rect.width
 
     def move(self):
         self.__rect.x += self.__speed * self.__horizontal_move_flag
