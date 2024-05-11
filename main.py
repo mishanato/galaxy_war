@@ -3,11 +3,14 @@ import pygame
 
 class Player:
     def __init__(self, screen_width, screen_height):
-        self.__sprite = pygame.transform.smoothscale(
+        self.__sprite = pygame.transform.scale(
             pygame.image.load("sprites/space_ship.png").convert_alpha(),
-            (screen_width // 4, screen_height // 10)
+            (screen_width // 5, screen_height // 9)
         )
-
+        #self.__sprite.get_alpha()
+        black = (0, 0, 0)
+        white = (255, 255, 255)
+        self.__sprite.set_colorkey(black)
         self.__rect = self.__sprite.get_rect()
 
         self.__rect.x = screen_width // 2 - self.__rect.width // 2
@@ -38,7 +41,7 @@ class Player:
 
 
     def draw(self, screen):
-        pygame.draw.rect(screen, (255, 255, 255), self.__rect)
+       # pygame.draw.rect(screen, (255, 255, 255), self.__rect)
         screen.blit(self.__sprite, self.__rect)
 
 
