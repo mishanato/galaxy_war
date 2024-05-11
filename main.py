@@ -1,6 +1,10 @@
 import pygame
 
 
+class Player:
+    def __init__(self, width, height):
+        pass
+
 # Класс Игры
 class Game:
 
