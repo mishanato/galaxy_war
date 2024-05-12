@@ -22,21 +22,19 @@ class rocket:
 
         self.__draw_rk_flag = 1
 
-    '''def check_event(self, event):
-        if self.__draw_rk_flag == 1:
-            self.draw()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                self.draw()
-                self.__draw_rk_flag = 1
-                print("ракета стартовала")
-'''
+    def check_event(self, event, player_pos, move_flag):
+        self.__move_flag = move_flag
+       # if self.__move_flag:
+        #    self.__rect.x = player_pos
+
+
 
     def move(self, player_x):
-        self.__rect.x = player_x
+      #  self.__rect.x = player_x
         self.__rect.y -= self.__speed
 
 
     def draw(self):
-        self.__screen.blit(self.__sprite, self.__rect)
+        if self.__move_flag:
+            self.__screen.blit(self.__sprite, self.__rect)
        # print("рисую пулю")
