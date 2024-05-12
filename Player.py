@@ -25,6 +25,8 @@ class Player:
         self.__height = screen_height
 
         self.__rocket = rocket(self.__rect.x, self.__width, self.__height, self.__screen)
+        self.__rk_move_flag = 0
+
 
     def check_event(self, event):
         if event.type == pygame.KEYDOWN:
@@ -32,7 +34,11 @@ class Player:
                 self.__horizontal_move_flag = -1
             elif event.key == pygame.K_d:
                 self.__horizontal_move_flag = 1
-        self.__rocket.check_event(event)
+            if event.key == pygame.K_SPACE:
+                self.__rk_move_flag = 1
+            elif event.key == pygame.K_9:
+                self.__rk_move_flag = 0
+        #self.__rocket.check_event(event)
 
     def check_logic(self, screen_width, screen_height):
 
@@ -53,4 +59,7 @@ class Player:
         # rk = pygame.Rect(200, 100, 30, 30)
         # screen.blit(screen, rk)
         screen.blit(self.__sprite, self.__rect)
+        if self.__rk_move_flag == 1:
+            self.__rocket.draw()
+
        # self.__rocket.draw(screen)

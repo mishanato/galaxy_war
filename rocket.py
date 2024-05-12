@@ -11,7 +11,7 @@ class rocket:
 
         self.__sprite = pygame.transform.scale(
             pygame.image.load("sprites/rocket.png").convert_alpha(),
-            (screen_width // 5, screen_height // 9)
+            (screen_width // 20, screen_height // 30)
         )
         self.__rect = self.__sprite.get_rect()
         self.__rect.x = self.__player_x
@@ -20,10 +20,16 @@ class rocket:
         self.__horizontal_move_flag = 0
         self.__speed = 5
 
-    def check_event(self, event):
+        self.__draw_rk_flag = 1
+
+    '''def check_event(self, event):
+        if self.__draw_rk_flag == 1:
+            self.draw()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 self.draw()
-
+                self.__draw_rk_flag = 1
+                print("ракета стартовала")
+'''
     def draw(self):
         self.__screen.blit(self.__sprite, self.__rect)

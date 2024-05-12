@@ -1,6 +1,6 @@
 import pygame
 from Player import *
-
+from rocket import *
 
 
 
@@ -28,6 +28,7 @@ class Game:
 
         self.__game_end = False
 
+        #self.__rocket = rocket()
         self.__player = Player(self.__width, self.__height, self.__screen)
     def __del__(self):
         pygame.quit()
@@ -54,6 +55,7 @@ class Game:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     print("SPACE")
+
 
                 elif event.key == pygame.K_0:
                     self.__scene = 0
