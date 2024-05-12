@@ -11,14 +11,14 @@ class rocket:
 
         self.__sprite = pygame.transform.scale(
             pygame.image.load("sprites/rocket.png").convert_alpha(),
-            (screen_width // 20, screen_height // 30)
+            (screen_width // 10, screen_height // 10)
         )
         self.__rect = self.__sprite.get_rect()
         self.__rect.x = self.__player_x
         self.__rect.y = screen_height - 100
 
         self.__horizontal_move_flag = 0
-        self.__speed = 5
+        self.__speed = 1
 
         self.__draw_rk_flag = 1
 
@@ -31,5 +31,12 @@ class rocket:
                 self.__draw_rk_flag = 1
                 print("ракета стартовала")
 '''
+
+    def move(self, player_x):
+        self.__rect.x = player_x
+        #self.__rect.y += self.__speed
+
+
     def draw(self):
         self.__screen.blit(self.__sprite, self.__rect)
+        print("рисую пулю")

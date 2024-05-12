@@ -51,6 +51,7 @@ class Player:
         self.__rect.x += self.__speed * self.__horizontal_move_flag
 
         self.__horizontal_move_flag = 0
+        self.__rocket.move(self.__rect.x)
 
 
 
@@ -61,5 +62,5 @@ class Player:
         screen.blit(self.__sprite, self.__rect)
         if self.__rk_move_flag == 1:
             self.__rocket.draw()
-
+            self.__rk_move_flag = 0
        # self.__rocket.draw(screen)
