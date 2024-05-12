@@ -28,7 +28,7 @@ class Game:
 
         self.__game_end = False
 
-        self.__player = Player(self.__width, self.__height)
+        self.__player = Player(self.__width, self.__height, self.__screen)
     def __del__(self):
         pygame.quit()
 
