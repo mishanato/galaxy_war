@@ -3,7 +3,7 @@ import pygame
 
 class rocket:
     def __init__(self, player_x, screen_width, screen_height, screen):
-        self.__player_x = player_x
+        self.__player_x_old = player_x
         self.__width = screen_width
         self.__height = screen_height
 
@@ -14,7 +14,7 @@ class rocket:
             (screen_width // 15, screen_height // 20)
         )
         self.__rect = self.__sprite.get_rect()
-        self.__rect.x = self.__player_x
+        self.__rect.x = self.__player_x_old
         self.__rect.y = screen_height - 100
 
         self.__horizontal_move_flag = 0
@@ -33,7 +33,7 @@ class rocket:
 '''
 
     def move(self, player_x):
-      #  self.__rect.x = player_x
+        self.__rect.x = player_x
         self.__rect.y -= self.__speed
 
 

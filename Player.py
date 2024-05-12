@@ -36,7 +36,8 @@ class Player:
                 self.__horizontal_move_flag = 1
             if event.key == pygame.K_SPACE:
                 self.__rk_move_flag = 1
-            elif event.key == pygame.K_9:
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_SPACE:
                 self.__rk_move_flag = 0
         #self.__rocket.check_event(event)
 
@@ -51,7 +52,8 @@ class Player:
         self.__rect.x += self.__speed * self.__horizontal_move_flag
 
         self.__horizontal_move_flag = 0
-        self.__rocket.move(self.__rect.x)
+        if self.__rk_move_flag == 1:
+            self.__rocket.move(self.__rect.x)
 
 
 
@@ -60,7 +62,7 @@ class Player:
         # rk = pygame.Rect(200, 100, 30, 30)
         # screen.blit(screen, rk)
         screen.blit(self.__sprite, self.__rect)
-      #  if self.__rk_move_flag == 1:
-        self.__rocket.draw()
+        if self.__rk_move_flag == 1:
+            self.__rocket.draw()
        #     self.__rk_move_flag = 0
        # self.__rocket.draw(screen)
