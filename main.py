@@ -42,6 +42,8 @@ class Game:
             self.__move_objects()
             self.__draw()
 
+            self.__clock.tick(self.__fps)
+
     def __check_logic(self):
         self.__player.check_logic(self.__width, self.__height)
 

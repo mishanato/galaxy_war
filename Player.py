@@ -60,7 +60,7 @@ class Player:
         # rk = pygame.Rect(200, 100, 30, 30)
         # screen.blit(screen, rk)
         screen.blit(self.__sprite, self.__rect)
-        if self.__rk_move_flag == 1:
-            self.__rocket.draw()
-            self.__rk_move_flag = 0
+      #  if self.__rk_move_flag == 1:
+        self.__rocket.draw()
+       #     self.__rk_move_flag = 0
        # self.__rocket.draw(screen)
